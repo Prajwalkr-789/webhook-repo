@@ -13,10 +13,9 @@ function Events() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const res = await fetch("http://localhost:5000/events");
-        // const res = await fetch("https://webhook-repo-ffd2.onrender.com/events");
+        // const res = await fetch("http://localhost:5000/events");
+        const res = await fetch("https://webhook-repo-ffd2.onrender.com/events");
         const data = await res.json();
-        console.log(data);
         setEvents(data.reverse());
       } catch (error) {
         console.error("Failed to fetch events:", error);
