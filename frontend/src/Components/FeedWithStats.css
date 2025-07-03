@@ -1,0 +1,165 @@
+/* --- Container --- */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Metric Cards --- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.card-header .icon {
+  margin-right: 0.5rem;
+  color: #666;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-footer {
+  color: #888;
+  font-size: 0.875rem;
+}
+
+/* --- Recent Activity --- */
+.recent-activity {
+  margin-top: 2rem;
+}
+
+.recent-activity h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-msg {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.activity-meta {
+  margin-top: 0.25rem;
+  color: #999;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 600px) {
+  .card-value {
+    font-size: 1.5rem;
+  }
+  .activity-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .avatar {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.activity-item:hover {
+  background: #f5f5f5;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #c084fc, #a855f7);
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-size: 14px;
+}
+
+.content {
+  flex: 1;
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+}
+
+.message a {
+  background: #e0e7ff;
+  color: #3b82f6;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin: 0 4px;
+  text-decoration: none;
+}
+
+.branch {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.meta {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+}
