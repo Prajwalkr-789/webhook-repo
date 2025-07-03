@@ -101,4 +101,5 @@ def connect_to_mongo():
 
 if __name__ == "__main__":
     events_col = connect_to_mongo()
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
