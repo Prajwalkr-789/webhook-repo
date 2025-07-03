@@ -77,7 +77,7 @@ def get_events():
     events = list(events_col.find().sort("timestamp", -1).limit(10))
     for e in events:
         e["_id"] = str(e["_id"])
-        e["timestamp"] = e["timestamp"].strftime("%d %B %Y - %I:%M %p UTC")
+        # e["timestamp"] = e["timestamp"].strftime("%d %B %Y - %I:%M %p UTC")
     return jsonify(events)
 
 def connect_to_mongo():

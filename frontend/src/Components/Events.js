@@ -13,8 +13,8 @@ function Events() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        // const res = await fetch("http://localhost:5000/events");
-        const res = await fetch("https://webhook-repo-ffd2.onrender.com/events");
+        const res = await fetch("http://localhost:5000/events");
+        // const res = await fetch("https://webhook-repo-ffd2.onrender.com/events");
         const data = await res.json();
         console.log(data);
         setEvents(data.reverse());
@@ -29,6 +29,8 @@ function Events() {
   }, []);
 
   const renderMessage = (event) => {
+    console.log(event)
+    const date = new Date(event.timestamp);
     switch (event.type) {
       case "push":
         return (
@@ -49,11 +51,13 @@ function Events() {
                 </div>
                 <div >
                   <span className="text-gray-800 text-xs px-2 py-0.5 rounded">
-                  {event.timestamp.split(" - ")[0]}
+                  {date.toLocaleDateString('en-US', {
+                    day: '2-digit', month: 'long', year: 'numeric'})}
                 </span>{" "}
                
                 <span className="text-gray-800 text-xs px-2 py-0.5 rounded">
-                 at {" "} {event.timestamp.split(" - ")[1]}
+                 at {" "} {date.toLocaleTimeString('en-US', {
+                    hour: '2-digit' , minute: '2-digit', hour12: true})}
                 </span>
                 </div>
                 
@@ -80,11 +84,13 @@ function Events() {
                 </div>
                 <div >
                   <span className="text-gray-800 text-xs px-2 py-0.5 rounded">
-                  {event.timestamp.split(" - ")[0]}
+                  {date.toLocaleDateString('en-US', {
+                    day: '2-digit', month: 'long', year: 'numeric'})}
                 </span>{" "}
                
                 <span className="text-gray-800 text-xs px-2 py-0.5 rounded">
-                 at {" "} {event.timestamp.split(" - ")[1]}
+                 at {" "} {date.toLocaleTimeString('en-US', {
+                    hour: '2-digit' , minute: '2-digit', hour12: true})}
                 </span>
                 </div>
                 
@@ -112,11 +118,13 @@ function Events() {
                 </div>
                 <div >
                   <span className="text-gray-800 text-xs px-2 py-0.5 rounded">
-                  {event.timestamp.split(" - ")[0]}
+                  {date.toLocaleDateString('en-US', {
+                    day: '2-digit', month: 'long', year: 'numeric'})}
                 </span>
                
                 <span className="text-gray-800 text-xs px-2 py-0.5 rounded">
-                 at {" "} {event.timestamp.split(" - ")[1]}
+                 at {" "} {date.toLocaleTimeString('en-US', {
+                    hour: '2-digit' , minute: '2-digit', hour12: true})}
                 </span>
                 </div>
                 
