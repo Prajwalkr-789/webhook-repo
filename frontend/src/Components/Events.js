@@ -28,7 +28,6 @@ function Events() {
   }, []);
 
   const renderMessage = (event) => {
-    console.log(event)
     const date = new Date(event.timestamp);
     switch (event.type) {
       case "push":
