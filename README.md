@@ -1,85 +1,74 @@
-🛠️ GitHub Webhook Event Tracker
-A full-stack application to track and visualize GitHub events like push, pull requests, and merge events using Flask, MongoDB, and React.
+# 🛠️ GitHub Webhook Event Tracker
 
-📌 Features
-✅ Backend (Flask)
-Accepts GitHub webhook POST events (push, pull_request, merge)
+A full-stack application to track and visualize GitHub events like push, pull requests, and merge events using **Flask**, **MongoDB**, and **React**.
 
-Parses event data and stores it in MongoDB
+---
 
-Exposes REST API to fetch latest events
+## 📌 Features
 
-🎯 Frontend (React)
-Displays a beautiful dashboard of:
+### ✅ Backend (Flask)
+- Accepts **GitHub webhook** `POST` events (`push`, `pull_request`, `merge`)
+- Parses incoming event data and stores it in **MongoDB**
+- Exposes REST API to retrieve recent GitHub events
 
-Total events
+### 🎯 Frontend (React)
+- Realtime dashboard with:
+  - ✅ Total Events
+  - ⬆️ Push Events
+  - 🔀 Pull Requests
+  - 👤 Contributors
+- Live updates every **15 seconds**
+- Clean, modern UI using **lucide-react** icons
 
-Push events
+---
 
-Pull requests
+## 🔧 Tech Stack
 
-Contributors
+| Layer     | Technology                                 |
+|-----------|---------------------------------------------|
+| Backend   | Flask, PyMongo, Flask-CORS, python-dotenv   |
+| Database  | MongoDB                                     |
+| Frontend  | React, Tailwind CSS, lucide-react           |
+| Dev Tools | GitHub Webhooks         |
 
-Live updates every 15 seconds
+---
 
-Interactive and clean UI using lucide-react icons
+## 🚀 Getting Started
 
-🔧 Tech Stack
-Backend: Flask, PyMongo, CORS, dotenv
+### 1️⃣ Backend Setup (Flask)
 
-Database: MongoDB
+#### 🐍 Prerequisites
+- Python 3.x
+- MongoDB (local or cloud instance)
+- GitHub repo to connect via webhook
 
-Frontend: React, Tailwind CSS, Lucide Icons
-
-Others: GitHub Webhooks, Docker (optional)
-
-🚀 Getting Started
-1️⃣ Backend Setup (Flask)
-🐍 Prerequisites
-Python 3.x
-
-MongoDB instance (local or cloud)
-
-GitHub repository (to configure webhook)
-
-📦 Install dependencies
-bash
-Copy
-Edit
+#### 📦 Install Dependencies
+```bash
 pip install Flask flask-cors pymongo python-dotenv
+```
 🗂️ Create a .env file
-env
-Copy
-Edit
 MONGO_URI=mongodb://localhost:27017
+
 ▶️ Run the server
-bash
-Copy
-Edit
 python app.py
 Server will run on http://localhost:5000.
 
 2️⃣ Frontend Setup (React)
 📁 Navigate to the React directory and install:
-bash
-Copy
-Edit
+```bash
 npm install
-(Include lucide-react, tailwindcss, etc. as dependencies)
-
+(Include lucide-react, tailwindcss as dependencies)
+```
 ▶️ Run the app
-bash
-Copy
-Edit
-npm run dev
-Frontend runs on http://localhost:5173 (or similar, based on your config).
+npm run start
+Frontend runs on http://localhost:3000 
 
 🔄 GitHub Webhook Setup
 Go to your GitHub repo → Settings → Webhooks
 
 Add webhook:
 
-Payload URL: http://<your-ip>:5000/webhook
+Payload URL: http://<your-ip>:5000/webhook(backend url)
 
 Content type: application/json
 
@@ -87,8 +76,13 @@ Events: Select push, pull_request
 
 Save!
 
-📁 API Endpoints
-Method	Endpoint	Description
-GET	/	Health check (Jai shree ram)
-POST	/webhook	Accept GitHub webhook payload
-GET	/events	Get recent 10 GitHub events
+🌐 Hosted Demo
+🔗 Live Frontend(https://webhook-repo-rtbi.vercel.app/)
+ The first request may take a little longer to load as the server is hosted on Render, which may spin up the backend on demand. Thanks for your patience!😊
+ 
+## 📁 API Endpoints
+
+| Method | Endpoint     | Description                        |
+|--------|--------------|------------------------------------|
+| POST   | `/webhook`   | Accept GitHub webhook payload      |
+| GET    | `/events`    | Get recent 10 GitHub events        |
